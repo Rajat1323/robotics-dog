@@ -118,6 +118,34 @@ body {
   gap: 12px;
 }
 
+.navbar-logo-container {
+  width: 42px;
+  height: 42px;
+  background: #ffffff;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px;
+  border: 1px solid rgba(0, 212, 255, 0.4);
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.25);
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.navbar-logo-container:hover {
+  transform: scale(1.04);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.45);
+}
+
+.navbar-brand-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
 .navbar-logo {
   width: 36px;
   height: 36px;

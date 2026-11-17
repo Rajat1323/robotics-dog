@@ -1,0 +1,565 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>FlyGroundX — Master Feature Guide & Technical Documentation</title>
+<!--[if gte mso 9]>
+<xml>
+ <w:WordDocument>
+  <w:View>Print</w:View>
+  <w:Zoom>100</w:Zoom>
+  <w:DoNotOptimizeForBrowser/>
+ </w:WordDocument>
+</xml>
+<![endif]-->
+<style>
+  @page Section1 {
+    size: 8.5in 11.0in;
+    margin: 1.0in 1.0in 1.0in 1.0in;
+    mso-header-margin: 0.5in;
+    mso-footer-margin: 0.5in;
+    mso-paper-source: 0;
+  }
+  div.Section1 { page: Section1; }
+  
+  body {
+    font-family: 'Segoe UI', 'Calibri', Arial, sans-serif;
+    font-size: 11pt;
+    line-height: 1.6;
+    color: #1a202c;
+    background-color: #ffffff;
+  }
+  
+  h1 {
+    font-size: 22pt;
+    font-weight: 800;
+    color: #0f172a;
+    border-bottom: 3px solid #0284c7;
+    padding-bottom: 6px;
+    margin-top: 20pt;
+    margin-bottom: 12pt;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  h2 {
+    font-size: 15pt;
+    font-weight: 700;
+    color: #0369a1;
+    background-color: #f0f9ff;
+    border-left: 5px solid #0284c7;
+    padding: 8px 12px;
+    margin-top: 24pt;
+    margin-bottom: 12pt;
+  }
+  
+  h3 {
+    font-size: 12pt;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 14pt;
+    margin-bottom: 6pt;
+  }
+  
+  p, li {
+    font-size: 10.5pt;
+    color: #334155;
+    margin-bottom: 6pt;
+  }
+  
+  ul {
+    margin-top: 4pt;
+    margin-bottom: 10pt;
+    padding-left: 20pt;
+  }
+  
+  .header-box {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    background-color: #0f172a;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    border: 1px solid #334155;
+  }
+  
+  .header-title {
+    font-size: 24pt;
+    font-weight: 900;
+    color: #38bdf8;
+    margin: 0 0 6px 0;
+  }
+  
+  .header-sub {
+    font-size: 11pt;
+    color: #94a3b8;
+    margin: 0;
+  }
+  
+  .meta-tag {
+    display: inline-block;
+    background-color: #0369a1;
+    color: #ffffff;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 9pt;
+    font-weight: 700;
+    margin-right: 8px;
+  }
+  
+  .callout-box {
+    background-color: #f8fafc;
+    border-left: 4px solid #0284c7;
+    border-top: 1px solid #e2e8f0;
+    border-right: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 10px 14px;
+    margin: 10px 0 16px 0;
+    border-radius: 0 6px 6px 0;
+  }
+  
+  .talking-point {
+    background-color: #fefce8;
+    border-left: 4px solid #eab308;
+    border-top: 1px solid #fef08a;
+    border-right: 1px solid #fef08a;
+    border-bottom: 1px solid #fef08a;
+    padding: 10px 14px;
+    margin: 8px 0 16px 0;
+    border-radius: 0 6px 6px 0;
+    font-style: italic;
+    color: #713f12;
+  }
+  
+  table.demo-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 18px 0;
+    font-size: 10pt;
+  }
+  
+  table.demo-table th {
+    background-color: #0f172a;
+    color: #ffffff;
+    text-align: left;
+    padding: 10px 12px;
+    font-weight: 700;
+    border: 1px solid #334155;
+  }
+  
+  table.demo-table td {
+    padding: 9px 12px;
+    border: 1px solid #cbd5e1;
+    vertical-align: top;
+  }
+  
+  table.demo-table tr:nth-child(even) {
+    background-color: #f8fafc;
+  }
+  
+  .badge {
+    font-weight: 700;
+    color: #0369a1;
+  }
+  
+  .usp-card {
+    background-color: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    padding: 12px 16px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+  }
+</style>
+</head>
+
+<body>
+<div class="Section1">
+
+  <!-- Document Header Banner -->
+  <div class="header-box">
+    <div class="header-title">🐾 FlyGroundX — Master Feature Guide</div>
+    <div class="header-sub">
+      <strong>Product:</strong> FlyGroundX Ground Control Station (GCS) &nbsp;|&nbsp; 
+      <strong>Hardware:</strong> Deep Robotics X30 Pro &nbsp;|&nbsp; 
+      <strong>Vendor:</strong> Piefly Aerospace
+    </div>
+  </div>
+
+  <!-- Executive Summary -->
+  <h1>1. Platform Executive Summary</h1>
+  <p>
+    <strong>FlyGroundX</strong> is a mission-critical, military-grade Web Ground Control Station (GCS) engineered for remote teleoperation, real-time spatial intelligence, multi-spectrum surveillance, and autonomous health diagnostics of the <strong>Deep Robotics X30 Pro</strong> industrial quadruped robot dog.
+  </p>
+  <p>
+    Built for high-stakes defense, industrial pipeline inspections, search-and-rescue (SAR), and hazardous facility patrols, FlyGroundX bridges complex quadruped robotics kinematics with an ultra-responsive cybernetic operator interface. It delivers sub-10ms AI edge inference, a dual-layer optical/3D LiDAR vision pipeline, real-time 12-DoF actuator telemetry, and blackbox flight recording.
+  </p>
+
+  <br>
+
+  <!-- Detailed Modules Breakdown -->
+  <h1>2. Module-by-Module Feature Breakdown</h1>
+
+  <!-- MODULE 1 -->
+  <h2>🕹️ MODULE 1: Motion Teleoperation & Locomotion Controls (/controls)</h2>
+  <p><em>The primary piloting station allowing human operators to navigate the quadruped robot, adjust movement dynamics, adapt to difficult terrain, and trigger specialized robotic behaviors.</em></p>
+
+  <h3>1.1 Directional Motion & Navigation Controller</h3>
+  <div class="callout-box">
+    <strong>What it does:</strong>
+    <ul>
+      <li><strong>Surge (Forward / Backward):</strong> Translates the robot along its longitudinal X-axis. Used for linear driving down hallways, roads, or trails.</li>
+      <li><strong>Yaw (Turn Left / Turn Right):</strong> Rotates the robot chassis around its vertical Z-axis (turning in place on its own footprint without forward motion).</li>
+      <li><strong>Strafe (Move Left / Move Right):</strong> Executes pure lateral translation along the Y-axis without rotating the body orientation. Crucial for sidestepping around narrow machinery or inspecting linear walls.</li>
+      <li><strong>Dual Control Schemes:</strong> Supports interactive on-screen <strong>Virtual Joystick</strong> as well as direct keyboard inputs (<strong>W/A/S/D</strong> and Arrow keys).</li>
+    </ul>
+    <strong>Real-World Use Case:</strong> Navigating through congested indoor factories, narrow pipe racks, and rubble where turning radius is restricted.
+  </div>
+  <div class="talking-point">
+    <strong>🗣️ Demo Pitch:</strong> "This omnidirectional motion controller allows the operator to maneuver the robot dog through tight industrial corridors, stairwells, and complex terrain with millimeter precision."
+  </div>
+
+  <h3>1.2 Locomotion Gait Modes & Dynamic Speed Scaler</h3>
+  <div class="callout-box">
+    <strong>What it does:</strong> Dynamically adapts leg stepping patterns (gaits) and speed to terrain conditions:
+    <ul>
+      <li><strong>Walk Gait (4-Beat Stride):</strong> A slow, statically stable gait where 3 paws maintain ground contact while 1 paw swings forward. Provides maximum traction on loose rocks, ice, or steep stairs.</li>
+      <li><strong>Trot Gait (2-Beat Dynamic Stride):</strong> The standard cruising gait where diagonal leg pairs (FL+RR, then FR+RL) move together in rhythm. Provides optimal energy efficiency and dynamic self-balancing at medium speeds.</li>
+      <li><strong>Bound Gait (Leaping Stride):</strong> Front leg pair and rear leg pair push simultaneously in synchronized bursts to clear small trenches or debris hurdles.</li>
+      <li><strong>Gallop Gait (High-Speed Sprint):</strong> Maximum sprint locomotion for rapid emergency response.</li>
+      <li><strong>Speed Scaler (0.5 m/s – 4.0 m/s):</strong> Linear throttle slider that scales motor RPM and stride frequency to match the operating environment.</li>
+    </ul>
+    <strong>Real-World Use Case:</strong> Choosing 'Walk' for descending wet metallic stairs and 'Trot' for flat tarmac perimeter patrols.
+  </div>
+  <div class="talking-point">
+    <strong>🗣️ Demo Pitch:</strong> "Operators can adapt locomotion on the fly—switching to a high-stability 'Walk' for descending stairs, or engaging 'Trot' for rapid perimeter surveillance."
+  </div>
+
+  <h3>1.3 Behavior Commands (Kinematic Action Macros)</h3>
+  <div class="callout-box">
+    <strong>What it does:</strong> Executes pre-programmed kinematic routines with a single click:
+    <ul>
+      <li><strong>Stand:</strong> Deploys the robot from rest into active standing posture (45 cm height).</li>
+      <li><strong>Sit:</strong> Bends rear actuators into a stable seated posture.</li>
+      <li><strong>Lie Down (Rest Mode):</strong> Lowers the chassis completely onto the ground to conserve battery during stationary surveillance.</li>
+      <li><strong>Stretch / Warm-Up:</strong> Cycles all 12 joint motors through their full angular limits (-45° to +120°) to verify actuator calibration.</li>
+      <li><strong>Jump:</strong> Coordinates an explosive vertical impulse across all 4 legs to clear obstacles up to 30 cm.</li>
+      <li><strong>Self-Recovery (Autonomous Flip Recovery):</strong> An autonomous algorithm that rolls and re-stands the robot dog if it trips or gets flipped upside down in the field.</li>
+    </ul>
+    <strong>Real-World Use Case:</strong> Unattended remote operations where human retrieval is impossible (e.g., radioactive containment zones or underground tunnels).
+  </div>
+  <div class="talking-point">
+    <strong>🗣️ Demo Pitch:</strong> "These autonomous routines ensure zero downtime. If the robot dog falls during a mission, the autonomous 'Self-Recovery' routine flips it back onto its feet without requiring human intervention."
+  </div>
+
+  <h3>1.4 Posture & Stance Kinematics (Chassis Leveling)</h3>
+  <div class="callout-box">
+    <strong>What it does:</strong> Controls chassis clearance and 3-axis angular leveling:
+    <ul>
+      <li><strong>Height Slider (20 cm – 65 cm):</strong> Adjusts chassis ground clearance. Lowering clearance allows crawling beneath low-hanging pipes; raising clearance avoids deep mud or water.</li>
+      <li><strong>Pitch Incline Slider (-25° to +25°):</strong> Tilts chassis forward/backward to keep onboard cameras and LiDAR sensors horizontally leveled while climbing 30° stairs or steep ramps.</li>
+      <li><strong>Roll Tilt Slider (-20° to +20°):</strong> Tilts chassis left/right to counterbalance side-slopes and prevent lateral tipping.</li>
+    </ul>
+  </div>
+  <div class="talking-point">
+    <strong>🗣️ Demo Pitch:</strong> "When climbing ramps or stairs, the operator can adjust pitch and roll so onboard cameras and LiDAR sensors remain perfectly horizontal."
+  </div>
+
+  <h3>1.5 Hardware Emergency Stop (E-STOP)</h3>
+  <div class="callout-box">
+    <strong>What it does:</strong> High-priority hardware killswitch that instantly cuts motor power and engages mechanical joint brakes in less than 5 milliseconds.
+  </div>
+  <div class="talking-point">
+    <strong>🗣️ Demo Pitch:</strong> "Safety-first architecture: In any hazard or collision risk, triggering E-STOP instantly locks all 12 actuators to prevent hardware damage."
+  </div>
+
+  <br>
+
+  <!-- MODULE 2 -->
+  <h2>📋 MODULE 2: System Logs & Blackbox Diagnostics (/logs)</h2>
+  <p><em>The onboard flight recorder capturing millisecond-accurate telemetry, component warnings, network latency, and operational audit trails.</em></p>
+
+  <h3>2.1 Real-Time Telemetry Event Stream</h3>
+  <div class="callout-box">
+    <strong>What it does:</strong> Continuously records all subsystem events with millisecond-accurate timestamps (<code>HH:MM:SS.mmm</code>) for actuator thermal warnings, battery drain milestones, network packet latency, and gait transitions.
+  </div>
+  <div class="talking-point">
+    <strong>🗣️ Demo Pitch:</strong> "This acts as the robot's blackbox recorder, maintaining an auditable trail of every millisecond of mission activity."
+  </div>
+
+  <h3>2.2 Log Severity Filtering (ALL, INFO, WARNING, ERROR, DEBUG)</h3>
+  <div class="callout-box">
+    <strong>What it does:</strong> Isolates logs by critical operational priority:
+    <ul>
+      <li><strong>INFO:</strong> Standard state changes (<code>Gait changed to Trot</code>, <code>Snapshot saved</code>).</li>
+      <li><strong>WARNING:</strong> Non-critical anomalies (<code>Motor 4 Temp > 58°C</code>, <code>Signal Strength: -78 dBm</code>).</li>
+      <li><strong>ERROR:</strong> Critical hardware faults (<code>Actuator Overcurrent Trip</code>, <code>Obstacle Collision Alert</code>).</li>
+      <li><strong>DEBUG:</strong> Low-level packet diagnostics and NPU inference timings.</li>
+    </ul>
+  </div>
+  <div class="talking-point">
+    <strong>🗣️ Demo Pitch:</strong> "With one click on 'ERROR' or 'WARNING', maintenance teams can isolate and troubleshoot hardware anomalies instantly."
+  </div>
+
+  <h3>2.3 Keyword Search Engine & Audit Trail</h3>
+  <div class="callout-box">
+    <strong>What it does:</strong> Live indexed search bar allowing operators to query specific terms such as <code>Battery</code>, <code>NPU</code>, <code>Thermal</code>, <code>Actuator</code>, or <code>IMU</code>.
+  </div>
+  <div class="talking-point">
+    <strong>🗣️ Demo Pitch:</strong> "During post-mission debriefs, operators can quickly search specific subsystem events to generate compliance reports."
+  </div>
+
+  <br>
+
+  <!-- MODULE 3 -->
+  <h2>🎥 MODULE 3: Multi-Spectrum Camera Array & 3D Spatial Vision (/camera)</h2>
+  <p><em>The flagship multi-sensor vision system providing 360° panoramic situational awareness, military night/thermal vision, NPU-accelerated AI object detection, and procedural 3D LiDAR SLAM simulation.</em></p>
+
+  <h3>3.1 4-Channel Synchronized Multi-Camera Array</h3>
+  <div class="callout-box">
+    <strong>What it does:</strong> Streams live feeds from all 4 on-chassis camera units:
+    <ul>
+      <li><strong>FRONT (0° Forward Bow):</strong> Primary 120° Wide-FOV navigation feed for pilot driving.</li>
+      <li><strong>REAR (180° Stern Reverse):</strong> Reverse feed with dynamic perspective reversing guidance lines.</li>
+      <li><strong>LEFT (270° Port Flank):</strong> 90° lateral perimeter surveillance feed.</li>
+      <li><strong>RIGHT (90° Starboard Flank):</strong> 90° starboard machinery inspection feed.</li>
+    </ul>
+  </div>
+  <div class="talking-point">
+    <strong>🗣️ Demo Pitch:</strong> "Operators gain 360° situational awareness on a single screen without any blind spots."
+  </div>
+
+  <h3>3.2 4 Military-Grade Multi-Spectrum Vision Filters</h3>
+  <div class="callout-box">
+    <strong>What it does:</strong> Switches sensor visualization based on lighting and mission requirements:
+    <ul>
+      <li><strong>RGB Mode:</strong> True-color, natural daylight optical video for general navigation.</li>
+      <li><strong>NIGHT VISION Mode:</strong> Phosphor green matrix with gain boost (+18 dB), simulating 850nm active IR illumination and 0.002 LUX ultra-sensitive vision for pitch-black environments.</li>
+      <li><strong>THERMAL FLIR Radiometric Mode:</strong> Ironbow thermal palette mapping temperatures from purple/blue (cool 18°C) to yellow/white (hot 95°C). Displays live spot temperature, maximum peak temperature (<code>75.1°C</code>), an interactive radiometric scale bar, and an automated red dashed <strong>Hotspot Tracking Box</strong>.</li>
+      <li><strong>OBJECT DETECTION Mode:</strong> Powered by an onboard <strong>YOLOv8-X30 NPU</strong> model running at <strong>8.4ms inference latency</strong>. Renders dynamic bounding boxes directly locked onto detected targets with fluctuating confidence scores (<code>98.8%</code>) and live ranging distance (<code>DIST: 3.5m</code>).</li>
+    </ul>
+  </div>
+  <div class="talking-point">
+    <strong>🗣️ Demo Pitch:</strong> "For nighttime patrols or electrical inspections, operators can switch to Night Vision or Radiometric FLIR Thermal to spot hidden fire hazards and overheating transformers."
+  </div>
+
+  <h3>3.3 Dual Vision Pipeline & 3D LiDAR Simulation (LIDAR SIM)</h3>
+  <div class="callout-box">
+    <strong>What it does:</strong> Provides a dual-layer vision failover architecture:
+    <ul>
+      <li><strong>Failover Architecture:</strong> Displays optical video in normal conditions. Clicking <strong>LIDAR SIM</strong> renders a real-time procedural 3D point-cloud matrix with quadruped walking gait bobbing motion, ambient sensor dust, and <strong>distinct 3D obstacles per camera angle</strong>:
+        <ul>
+          <li><em>FRONT:</em> Boulders, pipeline pillars, inspection beacons.</li>
+          <li><em>REAR:</em> Hazard cones, charging dock stations.</li>
+          <li><em>LEFT:</em> Cargo crates, pipe valve junctions, trench markers.</li>
+          <li><em>RIGHT:</em> High-voltage transformers, auxiliary generator units.</li>
+        </ul>
+      </li>
+      <li><strong>Auto-Failover Resilience:</strong> Automatically activates if optical camera lenses are obscured by dust, smoke, or mud.</li>
+    </ul>
+  </div>
+  <div class="talking-point">
+    <strong>🗣️ Demo Pitch:</strong> "This is our SLAM and 3D LiDAR perception layer. Even if camera lenses are obscured by heavy smoke or dust, the operator can safely continue navigating via the 3D LiDAR grid."
+  </div>
+
+  <h3>3.4 High-Resolution Snapshot (.JPG) with Embedded Military Telemetry</h3>
+  <div class="callout-box">
+    <strong>What it does:</strong> One-click capture that renders the active feed at full 1280×720 HD resolution, embeds military telemetry watermarks (<em>Timestamp, Camera ID, Filter Mode, Robot Serial, Piefly Aerospace branding</em>), and triggers an instant <code>.jpg</code> download without modal popups.
+  </div>
+  <div class="talking-point">
+    <strong>🗣️ Demo Pitch:</strong> "Inspection evidence can be saved instantly as watermarked JPG files for compliance and engineering reports."
+  </div>
+
+  <h3>3.5 Multi-View Layout Modes (Main + Sidebar Focus vs 4-Grid Quad Screen)</h3>
+  <div class="callout-box">
+    <strong>What it does:</strong>
+    <ul>
+      <li><strong>Main + Sidebar Focus:</strong> 1 large primary navigation feed (2.4x) alongside 3 auxiliary thumbnails for active pilot driving.</li>
+      <li><strong>4-GRID VIEW:</strong> 2×2 split-screen rendering all 4 cameras simultaneously in equal resolution for perimeter security surveillance.</li>
+    </ul>
+  </div>
+  <div class="talking-point">
+    <strong>🗣️ Demo Pitch:</strong> "Operators can toggle between 4-Grid split screen for broad patrol monitoring, and Main Focus mode for precise robotic driving."
+  </div>
+
+  <br>
+
+  <!-- MODULE 4 -->
+  <h2>⚙️ MODULE 4: Hardware Settings & Safety Limits (/settings)</h2>
+  <p><em>Hardware communication configuration, autonomous safety thresholds, and sensor calibration routines.</em></p>
+
+  <h3>4.1 Communication & Network Profiles</h3>
+  <div class="callout-box">
+    <strong>What it does:</strong> Configures multi-protocol telemetry channels:
+    <ul>
+      <li><strong>5G LTE Private SIM:</strong> Encrypted cellular pipeline for Beyond Visual Line of Sight (BVLOS) autonomous operations.</li>
+      <li><strong>Wi-Fi 6 Direct:</strong> High-bandwidth (2.4/5.8 GHz) low-latency channel for local operations.</li>
+      <li><strong>Telemetry Baud Rate (115200 bps):</strong> High-speed CAN-bus bridge communication.</li>
+    </ul>
+  </div>
+  <div class="talking-point">
+    <strong>🗣️ Demo Pitch:</strong> "The platform supports multi-protocol telemetry, from local Wi-Fi 6 to encrypted private 5G military networks."
+  </div>
+
+  <h3>4.2 Automated Safety & Thermal Protection Thresholds</h3>
+  <div class="callout-box">
+    <strong>What it does:</strong> Defines automated safety boundaries:
+    <ul>
+      <li><strong>Battery Cut-Off Limit (20%):</strong> Automatically brings the robot to a safe seated position before complete power exhaustion.</li>
+      <li><strong>Max Motor Temperature Limit (75°C):</strong> Auto-throttles actuator torque if motors overheat.</li>
+      <li><strong>Auto Fall-Recovery Toggle:</strong> Enables or disables autonomous righting behavior.</li>
+    </ul>
+  </div>
+  <div class="talking-point">
+    <strong>🗣️ Demo Pitch:</strong> "Automated safety thresholds protect the robot from thermal damage and ensure graceful shutdown during critical battery depletion."
+  </div>
+
+  <h3>4.3 Sensor Zeroing & IMU Calibration Routines</h3>
+  <div class="callout-box">
+    <strong>What it does:</strong> One-click calibration routines:
+    <ul>
+      <li><strong>Zero IMU Gyro:</strong> Recalibrates internal 6-axis attitude and balance sensors.</li>
+      <li><strong>Calibrate Joint Encoders:</strong> Homes zero-degree alignment across all 12 leg actuators.</li>
+      <li><strong>LiDAR Sensor Range Test:</strong> Validates proximity sensor rangefinding accuracy.</li>
+    </ul>
+  </div>
+  <div class="talking-point">
+    <strong>🗣️ Demo Pitch:</strong> "Pilots can perform a comprehensive pre-flight self-test and IMU zeroing routine before initiating a field mission."
+  </div>
+
+  <br>
+
+  <!-- MODULE 5 -->
+  <h2>📊 MODULE 5: Master Dashboard Overview & Real-Time Telemetry (/)</h2>
+  <p><em>The central command console aggregating multi-sensor vitals, kinematic attitude, joint torque loads, and battery analytics in a single unified view.</em></p>
+
+  <h3>5.1 Mission-Critical Telemetry KPI Cards</h3>
+  <div class="callout-box">
+    <strong>What it does:</strong> Displays 4 primary vitals:
+    <ul>
+      <li><strong>Battery Level (%):</strong> Real-time State of Charge (SoC) with drain rate and remaining runtime (<code>77.6% - 223 min</code>).</li>
+      <li><strong>Current Speed (m/s):</strong> Instantaneous linear velocity tracker.</li>
+      <li><strong>Body Temperature (°C):</strong> Internal core electronics temperature with dynamic safety colors.</li>
+      <li><strong>5G / RF Signal Strength (dBm):</strong> Wireless link quality and ping latency.</li>
+    </ul>
+  </div>
+  <div class="talking-point">
+    <strong>🗣️ Demo Pitch:</strong> "At a single glance, operators can monitor battery reserves, speed, internal temperature, and wireless link quality."
+  </div>
+
+  <h3>5.2 3D Attitude Orientation Cube (Gyroscopic Tracking)</h3>
+  <div class="callout-box">
+    <strong>What it does:</strong> An interactive 3D Cube that mirrors real-time <strong>Roll, Pitch, and Yaw</strong> attitude angles received from the onboard 6-axis IMU.
+  </div>
+  <div class="talking-point">
+    <strong>🗣️ Demo Pitch:</strong> "This 3D orientation cube visualizes the exact physical tilt and incline of the robot dog in real time."
+  </div>
+
+  <h3>5.3 4-Foot Ground Reaction Force & Contact Map</h3>
+  <div class="callout-box">
+    <strong>What it does:</strong> Stance pressure map for all 4 paws (FL, FR, RL, RR). Illuminates green when a leg is firmly in contact with the ground and measures ground reaction force.
+  </div>
+  <div class="talking-point">
+    <strong>🗣️ Demo Pitch:</strong> "The 4-point stance map indicates which legs are firmly in contact with the ground, alerting the operator to potential slips or uneven footing."
+  </div>
+
+  <h3>5.4 Real-Time Analytics Rolling Charts (Speed & Power Consumption)</h3>
+  <div class="callout-box">
+    <strong>What it does:</strong> Time-series graphs tracking:
+    <ul>
+      <li><strong>Velocity Curve:</strong> Speed acceleration and braking deceleration profiles.</li>
+      <li><strong>Power Consumption (Watts):</strong> Real-time power draw from the 48V 25Ah lithium battery pack.</li>
+    </ul>
+  </div>
+  <div class="talking-point">
+    <strong>🗣️ Demo Pitch:</strong> "Operators can correlate speed surges with battery power draw to optimize mission endurance."
+  </div>
+
+  <h3>5.5 12-DoF Joint Actuator Torque Load Distribution</h3>
+  <div class="callout-box">
+    <strong>What it does:</strong> Bar graph displaying mechanical torque (Nm) across all 12 brushless actuators (Hip, Thigh, and Calf per leg).
+  </div>
+  <div class="talking-point">
+    <strong>🗣️ Demo Pitch:</strong> "Real-time joint torque monitoring helps identify mechanical strain on individual motors before hardware fatigue occurs."
+  </div>
+
+  <h3>5.6 Master Locomotion Gait Selector</h3>
+  <div class="callout-box">
+    <strong>What it does:</strong> Quick-access switcher on the main dashboard allowing pilots to transition between <code>Walk</code>, <code>Trot</code>, <code>Bound</code>, and <code>Gallop</code> without leaving the telemetry console.
+  </div>
+  <div class="talking-point">
+    <strong>🗣️ Demo Pitch:</strong> "Pilots can adjust locomotion gaits instantly without leaving the master telemetry dashboard."
+  </div>
+
+  <br>
+
+  <!-- Section 3: Live Demo Script Table -->
+  <h1>3. Master 3-Minute Live Demo Presentation Script</h1>
+
+  <table class="demo-table">
+    <thead>
+      <tr>
+        <th style="width: 8%;">Step</th>
+        <th style="width: 20%;">Module / Screen</th>
+        <th style="width: 32%;">Actions to Perform on Screen</th>
+        <th style="width: 40%;">Master Demo Pitch (What to Say)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Step 1</strong></td>
+        <td><strong>Controls (/controls)</strong></td>
+        <td>1. Drag Virtual Joystick.<br>2. Move Height & Pitch Sliders.<br>3. Click <strong>Sit</strong>, then <strong>Stand</strong>.<br>4. Highlight <strong>Self-Recovery</strong>.</td>
+        <td>"Welcome to FlyGroundX, the Ground Control Station for the Deep Robotics X30 Pro quadruped platform. We begin at Motion Teleoperation: Here operators have full omnidirectional joystick control, can adjust chassis height and stance leveling for steep slopes, and execute dynamic macros like Sit, Stand, and autonomous Self-Recovery if the robot trips in the field."</td>
+      </tr>
+      <tr>
+        <td><strong>Step 2</strong></td>
+        <td><strong>Logs (/logs)</strong></td>
+        <td>1. Show live timestamps.<br>2. Click <strong>WARNING</strong> then <strong>ERROR</strong>.<br>3. Type <code>Battery</code> in search box.</td>
+        <td>"Next is our Blackbox Flight Recorder: It captures millisecond-accurate audit trails of motor temperatures, battery alerts, and network telemetry for mission forensics and maintenance troubleshooting."</td>
+      </tr>
+      <tr>
+        <td><strong>Step 3</strong></td>
+        <td><strong>Camera (/camera)</strong></td>
+        <td>1. Click <strong>NIGHT VISION</strong>.<br>2. Click <strong>THERMAL FLIR</strong>.<br>3. Click <strong>OBJECT DETECTION</strong>.<br>4. Click <strong>LIDAR SIM</strong>.<br>5. Switch <strong>FRONT</strong>, <strong>REAR</strong>, <strong>LEFT</strong>, <strong>RIGHT</strong>.<br>6. Click <strong>SNAPSHOT (JPG)</strong>.<br>7. Click <strong>4-GRID VIEW</strong>.</td>
+        <td>"This is our flagship Multi-Spectrum Vision array covering 360° across 4 synchronized cameras. Operators can engage Night Vision in zero-light, FLIR Thermal heat signatures to detect overheating machinery up to 75°C, or YOLOv8 AI object tracking running at 8.4ms inference. If optical cameras are occluded by smoke or mud, our procedural 3D LiDAR Simulation takes over with spatial point-clouds and terrain obstacles. Operators can capture watermarked HD JPG snapshots in one click or toggle 4-Grid split view for perimeter patrol."</td>
+      </tr>
+      <tr>
+        <td><strong>Step 4</strong></td>
+        <td><strong>Settings (/settings)</strong></td>
+        <td>1. Show 5G / Wi-Fi profiles.<br>2. Show 20% Battery Cut-Off.<br>3. Click <strong>Zero IMU Gyro</strong>.</td>
+        <td>"In Settings, operators configure encrypted 5G private networks, establish automated battery cut-off safety limits, and execute pre-flight IMU sensor zeroing."</td>
+      </tr>
+      <tr>
+        <td><strong>Step 5</strong></td>
+        <td><strong>Overview (/)</strong></td>
+        <td>1. Point to KPI Cards.<br>2. Point to 3D Attitude Cube.<br>3. Show 4-Foot Contact Map.<br>4. Switch Gait to <strong>Trot</strong>.</td>
+        <td>"Finally, our Master Dashboard Overview brings everything together: Real-time 3D chassis gyroscopic attitude, 4-paw ground reaction force, 12-motor torque distribution, and dynamic gait switching between Walk, Trot, and Bound."</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+
+  <!-- Section 4: Key USPs -->
+  <h1>4. Core Technical Differentiators (Why FlyGroundX Wins)</h1>
+
+  <div class="usp-card">
+    <strong>1. Dual-Layer Vision Architecture:</strong> Seamless failover between optical video and a procedural 3D LiDAR SLAM simulation for zero-downtime situational awareness.
+  </div>
+  <div class="usp-card">
+    <strong>2. Sub-10ms AI Edge Telemetry:</strong> Onboard YOLOv8 object recognition integrated with dynamic distance calculation and fluctuating confidence tracking.
+  </div>
+  <div class="usp-card">
+    <strong>3. True Radiometric Thermal Diagnostics:</strong> Live hotspot tracking with max peak calculations and interactive temperature scale bars.
+  </div>
+  <div class="usp-card">
+    <strong>4. Blackbox Flight Diagnostic Recorder:</strong> Real-time event auditing, severity filtering, and instant incident forensics.
+  </div>
+  <div class="usp-card">
+    <strong>5. Mission-Ready Cybernetic UX:</strong> High-contrast, dark-mode design with glowing tactical glassmorphism built for maximum operator clarity in mission-critical environments.
+  </div>
+
+</div>
+</body>
+</html>

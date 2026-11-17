@@ -7,7 +7,13 @@ export default function Navbar({ telemetry }) {
     <nav className="navbar">
       {/* Brand */}
       <div className="navbar-brand">
-        <div className="navbar-logo">FGX</div>
+        <div className="navbar-logo-container">
+          <img
+            src="/piefly-logo.png"
+            alt="PieFly Logo"
+            className="navbar-brand-logo"
+          />
+        </div>
         <div>
           <div className="navbar-title">
             <span>FlyGround</span>X
